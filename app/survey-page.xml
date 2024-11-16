@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ScrollView>
+        <StackLayout class="p-6">
+            <Label text="1. Owner Details" class="text-2xl font-bold mb-4" />
+            
+            <Label text="Full Name" class="text-lg mb-2" />
+            <TextField text="{{ ownerName }}" 
+                      hint="Enter your full name" 
+                      class="{{ ownerNameError ? 'input p-4 border rounded mb-4 border-red-500' : 'input p-4 border rounded mb-4' }}" />
+            
+            <Label text="Mobile Number" class="text-lg mb-2" />
+            <TextField text="{{ ownerMobile }}" 
+                      hint="Enter your mobile number" 
+                      keyboardType="phone" 
+                      class="{{ ownerMobileError ? 'input p-4 border rounded mb-4 border-red-500' : 'input p-4 border rounded mb-4' }}" />
+            
+            <Label text="Complete Address" class="text-lg mb-2" />
+            <TextField text="{{ houseNumber }}" 
+                      hint="House/Apartment Number" 
+                      class="{{ addressError ? 'input p-4 border rounded mb-2 border-red-500' : 'input p-4 border rounded mb-2' }}" />
+            <TextField text="{{ street }}" 
+                      hint="Street Number" 
+                      class="{{ addressError ? 'input p-4 border rounded mb-2 border-red-500' : 'input p-4 border rounded mb-2' }}" />
+            <TextField text="{{ locality }}" 
+                      hint="Locality" 
+                      class="{{ addressError ? 'input p-4 border rounded mb-2 border-red-500' : 'input p-4 border rounded mb-2' }}" />
+            <TextField text="{{ city }}" 
+                      hint="City" 
+                      class="{{ addressError ? 'input p-4 border rounded mb-2 border-red-500' : 'input p-4 border rounded mb-2' }}" />
+            <TextField text="{{ state }}" 
+                      hint="State" 
+                      class="{{ addressError ? 'input p-4 border rounded mb-2 border-red-500' : 'input p-4 border rounded mb-2' }}" />
+            <TextField text="{{ pincode }}" 
+                      hint="Pin Code" 
+                      keyboardType="number" 
+                      class="{{ addressError ? 'input p-4 border rounded mb-4 border-red-500' : 'input p-4 border rounded mb-4' }}" />
+            
+            <Label text="2. Why are you not happy" class="text-xl font-bold mb-1" />
+            <Label text="with your current maid?" class="text-xl font-bold mb-4" />
+            <StackLayout class="{{ reasonError ? 'mb-4 border-red-500 border rounded p-2' : 'mb-4' }}">
+                <GridLayout rows="auto" columns="auto, *" class="mb-2" tap="{{ togglePunctual }}">
+                    <Label text="{{ isPunctualChecked ? '●' : '○' }}" col="0" class="mr-2 text-lg" />
+                    <Label text="The maid is not punctual" col="1" textWrap="true" />
+                </GridLayout>
+                <GridLayout rows="auto" columns="auto, *" class="mb-2" tap="{{ toggleCleanliness }}">
+                    <Label text="{{ isCleanlinessChecked ? '●' : '○' }}" col="0" class="mr-2 text-lg" />
+                    <Label text="The maid is not clean" col="1" textWrap="true" />
+                </GridLayout>
+                <GridLayout rows="auto" columns="auto, *" class="mb-2" tap="{{ toggleBehavior }}">
+                    <Label text="{{ isBehaviorChecked ? '●' : '○' }}" col="0" class="mr-2 text-lg" />
+                    <Label text="Behaviour issues" col="1" textWrap="true" />
+                </GridLayout>
+                <GridLayout rows="auto" columns="auto, *" class="mb-2" tap="{{ togglePayDemand }}">
+                    <Label text="{{ isPayDemandChecked ? '●' : '○' }}" col="0" class="mr-2 text-lg" />
+                    <Label text="Maid demands more pay" col="1" textWrap="true" />
+                </GridLayout>
+            </StackLayout>
+            
+            <Label text="3. Maid Details" class="text-2xl font-bold mb-4" />
+            <TextField text="{{ maidName }}" 
+                      hint="Maid's Full Name" 
+                      class="{{ maidNameError ? 'input p-4 border rounded mb-4 border-red-500' : 'input p-4 border rounded mb-4' }}" />
+            <TextField text="{{ maidMobile }}" 
+                      hint="Maid's Mobile Number" 
+                      keyboardType="phone" 
+                      class="{{ maidMobileError ? 'input p-4 border rounded mb-4 border-red-500' : 'input p-4 border rounded mb-4' }}" />
+            
+            <Button text="Submit" 
+                    tap="onSubmit" 
+                    class="bg-blue-500 text-white text-lg font-bold py-4 rounded-lg mb-4" />
+        </StackLayout>
+    </ScrollView>
+</Page>

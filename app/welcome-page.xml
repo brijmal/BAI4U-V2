@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <GridLayout>
+        <!-- Background gradient -->
+        <StackLayout backgroundColor="#4158D0" opacity="0.95">
+            <StackLayout backgroundColor="#C850C0" opacity="0.4" />
+        </StackLayout>
+        
+        <!-- Content -->
+        <StackLayout class="p-6">
+            <Label text="Welcome to" class="text-4xl font-bold text-center mb-2 text-white" />
+            <Label text="BAI4U" class="text-6xl font-bold text-center mb-6 text-white" />
+            <Label text="Take a quick survey to help us understand your pain points" 
+                   textWrap="true" 
+                   class="text-2xl text-center text-white mb-8" />
+            <Button text="Get Started" 
+                    tap="onGetStarted" 
+                    class="bg-white text-purple-600 text-xl font-bold py-4 rounded-lg" />
+        </StackLayout>
+    </GridLayout>
+</Page>
